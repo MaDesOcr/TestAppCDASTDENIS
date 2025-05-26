@@ -1,6 +1,8 @@
 package com.dev.testappcdastdenis
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -19,12 +21,11 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container_topleft, FirstFragment())
-            .replace(R.id.fragment_container_topright, FirstFragment())
-            .replace(R.id.fragment_container_bottomleft, FirstFragment())
-            .replace(R.id.fragment_container_bottomright, FirstFragment())
+        val button : Button = findViewById<Button>(R.id.button_lancement_jeu)
 
-            .commit()
+        button.setOnClickListener(){
+            var intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
