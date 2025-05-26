@@ -20,7 +20,11 @@ class MainActivity : FragmentActivity() {
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, FirstFragment())
+            .replace(R.id.fragment_container_topleft, FirstFragment())
+            .replace(R.id.fragment_container_topright, FirstFragment())
+            .replace(R.id.fragment_container_bottomleft, FirstFragment())
+            .replace(R.id.fragment_container_bottomright, FirstFragment())
+
             .commit()
     }
 }
