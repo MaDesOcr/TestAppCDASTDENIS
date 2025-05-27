@@ -1,11 +1,11 @@
 package com.dev.testappcdastdenis
 
 import android.os.Bundle
-import android.os.Handler
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import com.dev.testappcdastdenis.utiljava.Utilitaires
+import android.content.Intent
 
 class GameActivity : FragmentActivity() {
 
@@ -119,7 +119,12 @@ class GameActivity : FragmentActivity() {
             compteur++
         }
         else{
+            var intent = Intent(this, GameOverActivity::class.java)
+            startActivity(intent)
+
             //fin de partie
+            //création et lancement d'une nouvelle activité
+            //dans cette activité, "Game Over", affichage des "highscores" qui proviennent d'un fichier txt
             compteur = 0
         }
         println("compteur : $compteur")

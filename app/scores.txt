@@ -1,0 +1,3 @@
+testjoueur 110
+testjoueur2 210
+testjoueur3 310
